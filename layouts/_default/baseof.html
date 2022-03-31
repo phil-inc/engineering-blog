@@ -1,0 +1,30 @@
+<html lang="en">
+{{ .Scratch.Set "pageTitle" "news-press" }}
+{{ partial "head.html" . }}
+
+<body>
+    <div>
+        {{ partial "header.html" . }}
+        <div class="news-press-banner">
+            <div class="container">
+                <h1 class="home-page__heading">Insights</h1>
+            </div>
+        </div>
+        <div class="releases">
+            <div class="container">
+                <div class="news-page__title clearfix">
+                    <div class="left">
+                        <img src="/img/icons/news.svg" alt="" />
+                    </div>
+                    <h5 class="news-page__title__heading">All Insights</h5>
+                </div>
+            </div>
+            <div class="container two-even-columns-grid all-releases">
+                {{ block "main" . }}{{ end }}
+            </div>
+        </div>
+        {{ partial "footer.html" . }}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+.insights {
+    @include e(all) {
+        columns: 1;
+        -webkit-columns: 1; 
+        -moz-columns: 1;
+
+        @include for-size(medium) {
+            columns: 3;
+            -webkit-columns: 3; 
+            -moz-columns: 3;
+        }
+
+        @include e(list) {
+            display: inline-block;
+        }
+
+        @include e(banner) {
+            border-radius: 4px 4px 0 0;
+            min-height: 200px;
+        }
+    }
+
+    @include e(info-box){
+        background-color: #fff;
+        padding: 24px 20px;
+
+        @include e(title){
+            color: #0000ac;
+            font: normal 400 22px/1.45 $font-family--primary-medium;
+
+            @include for-size(medium) {
+                font: normal 400 26px/1.54 $font-family--primary-medium;
+            }
+        }
+
+        @include e(date){
+            margin : 8px 0 12px;
+            color : #797c80;
+            font : normal 400 12px $font-family--secondary;
+
+            @include for-size(medium) {
+                margin : 8px 0 16px;
+                font : normal 400 16px $font-family--secondary;
+            }
+        }
+
+        @include e(desc){
+            color : #797C80;
+            font : normal 400 16px/24px $font-family--secondary;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+
+            @include for-size(medium) {
+                font : normal 400 18px/26px $font-family--secondary;
+            }
+        }
+
+        @include e(read-more){
+            display: block;
+            color: $primary-color;
+            margin-top: 16px;
+            font : normal 400 16px/24px $font-family--secondary;
+
+            @include for-size(medium) {
+                font : normal 400 18px/26px $font-family--secondary;
+            }
+
+            @include e(icon) {
+               
+                float: left;
+                margin-right: 8px;
+                @include m(right) {
+                  font-family : $font-family--primary;
+                  float: right;
+                  margin-left: 12px;
+                }
+              }
+            
+              @include e(text) {
+                width: calc(100% - 24px);
+                float: left;
+                @include m(full) {
+                  width: auto;
+                }
+              }
+            
+              &:hover,
+              &:focus {
+                text-decoration: none;
+            
+                .insights__info-box__read-more__text,
+                .insights__info-box__read-more__text--auto {
+                  text-decoration: underline;
+                }
+              }
+        }
+    }
+}
+
+.no-banner {
+    position: relative;
+    background-size: cover;
+    background-color: #00CCAE;
+}

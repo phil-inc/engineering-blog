@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="insights__all">
+    {{ range .Pages }}
+    <div class="insights__all__list">
+        <div class="insights__all__banner no-banner"></div>  
+        <div class="insights__info-box">
+            <h2 class="insights__info-box__title">{{.Title}}</h2>
+            <div class="insights__info-box__date">{{ dateFormat "Jan 2, 2006" .Date}}</div>
+            <div class="insights__info-box__desc">{{ .Description}}</div>
+            <a class="insights__info-box__read-more clearfix left" title="{{.Title}}" href="{{.Permalink}}">
+                <span class="insights__info-box__read-more__icon--right">→</span>
+                <span class="insights__info-box__read-more__text--auto">Read more</span>
+            </a>
+        </div>
+        
+    </div>
+    {{ end }}
+</div>
+{{ end }}
