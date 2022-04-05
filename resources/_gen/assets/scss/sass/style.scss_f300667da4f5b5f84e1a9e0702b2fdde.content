@@ -3088,70 +3088,68 @@ label {
   .terms-wrapper a {
     color: #00ccae; }
 
-.press-release {
+.blog-section {
   padding: 40px 0 64px;
   letter-spacing: normal; }
   @media (min-width: 600px) {
-    .press-release {
+    .blog-section {
       padding: 60px 0 84px; } }
   @media (min-width: 800px) {
-    .press-release {
+    .blog-section {
       padding: 60px 0 90px; } }
-  .press-release p {
+  .blog-section p {
     margin-bottom: 16px;
     color: #797c80;
-    font: normal normal 16px/1.75 "Lato", arial, sans-serif; }
+    font: normal normal 20px/1.75 "Lato", arial, sans-serif; }
     @media (min-width: 800px) {
-      .press-release p {
-        font-size: 20px;
+      .blog-section p {
         line-height: 1.4;
         margin-bottom: 20px; } }
-  .press-release h1 {
+  .blog-section h1 {
     margin-bottom: 28px;
     color: #00ccae;
     font: normal bold 30px "MarkOTBold", arial, sans-serif; }
     @media (min-width: 800px) {
-      .press-release h1 {
+      .blog-section h1 {
         font-size: 40px;
         line-height: 1.28;
         margin-bottom: 32px; } }
-  .press-release h4 {
+  .blog-section h4 {
     margin-top: 5px;
     color: #bbbdbf;
     letter-spacing: normal;
     font: normal 16px/1.14 "MarkOTBook", arial, sans-serif; }
     @media (min-width: 600px) {
-      .press-release h4 {
+      .blog-section h4 {
         margin: 5px 0 40px; } }
-  .press-release h2 {
+  .blog-section h2 {
     margin-bottom: 12px;
+    margin-top: 32px;
     color: #00008f;
-    font: normal 500 22px/1.27 "MarkOTMedium", arial, sans-serif;
-    margin-top: 32px; }
-    @media (min-width: 800px) {
-      .press-release h2 {
+    font: normal 500 18px/27px "MarkOTMedium", arial, sans-serif; }
+    @media (min-width: 600px) {
+      .blog-section h2 {
+        margin-top: 40px;
+        font: normal 500 26px / 32px "MarkOTMedium", arial, sans-serif;
         margin-bottom: 20px; } }
-    @media (min-width: 800px) {
-      .press-release h2 {
-        margin-top: 40px; } }
-  .press-release h3 {
+  .blog-section h3 {
     margin: 15px 0 5px;
     color: #292a2e;
     font: normal 18px/1.14 "MarkOTBook", arial, sans-serif; }
     @media (min-width: 600px) {
-      .press-release h3 {
+      .blog-section h3 {
         font: normal 22px / 1.14 "MarkOTBook", arial, sans-serif; } }
-  .press-release ul li {
+  .blog-section ul li {
     padding-left: 14px;
     position: relative;
     margin-bottom: 12px;
     color: #797c80;
     font: normal normal 16px/1.75 "Lato", arial, sans-serif; }
     @media (min-width: 800px) {
-      .press-release ul li {
+      .blog-section ul li {
         font-size: 20px;
         line-height: 1.4; } }
-    .press-release ul li::before {
+    .blog-section ul li::before {
       left: 0;
       top: 10px;
       width: 6px;
@@ -3161,12 +3159,37 @@ label {
       position: absolute;
       background-color: #00ccae; }
       @media (min-width: 800px) {
-        .press-release ul li::before {
+        .blog-section ul li::before {
           top: 12px; } }
-    .press-release ul li:last-child {
+    .blog-section ul li:last-child {
       margin-bottom: 0; }
-  .press-release a {
+  .blog-section a {
     color: #00ccae; }
+
+.blog-banner {
+  height: 277px; }
+  @media (min-width: 600px) {
+    .blog-banner {
+      height: 378px; } }
+  .blog-banner__title-box {
+    max-width: 1200px;
+    margin: 0 auto;
+    top: 50%;
+    position: relative; }
+    .blog-banner__title-box h1 {
+      color: #fff;
+      font: normal bold 20px/26px "MarkOTBold", arial, sans-serif; }
+      @media (min-width: 600px) {
+        .blog-banner__title-box h1 {
+          font: normal bold 32px / 41px "MarkOTBold", arial, sans-serif; } }
+      @media (min-width: 800px) {
+        .blog-banner__title-box h1 {
+          font: normal bold 42px / 58px "MarkOTBold", arial, sans-serif; } }
+.banner-bg {
+  position: relative;
+  background-size: cover !important;
+  background-color: #00ccae;
+  background-repeat: no-repeat !important; }
 
 @media (min-width: 600px) {
   .pharmacy-page {
@@ -3675,12 +3698,18 @@ label {
       -webkit-columns: 3;
       -moz-columns: 3; } }
   .insights__all__list {
+    margin-bottom: 28px;
     display: inline-block; }
   .insights__all__banner {
     border-radius: 4px 4px 0 0;
-    min-height: 200px; }
+    min-height: 200px;
+    position: relative;
+    background-size: auto 200px !important;
+    background-color: #00CCAE;
+    background-position: center center !important; }
 
 .insights__info-box {
+  border-radius: 0 0 4px 4px;
   background-color: #fff;
   padding: 24px 20px; }
   .insights__info-box__title {
@@ -3735,7 +3764,10 @@ label {
       .insights__info-box__read-more:focus .insights__info-box__read-more__text--auto {
         text-decoration: underline; }
 
-.no-banner {
-  position: relative;
-  background-size: cover;
-  background-color: #00CCAE; }
+.no-banner-logo {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }

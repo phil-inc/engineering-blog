@@ -2,9 +2,16 @@
 <div class="insights__all">
     {{ range .Pages }}
     <div class="insights__all__list">
-        <div class="insights__all__banner no-banner"></div>  
+
+        {{ if eq .Params.banner ""}}
+        <div class="insights__all__banner">
+            <img class="no-banner-logo" src="/img/p-logo.png">
+        </div>  
+        {{else}}
+        <div class="insights__all__banner" style="background: url({{.Params.banner}});"></div>  
+        {{end}}
         <div class="insights__info-box">
-            <h2 class="insights__info-box__title">{{.Title}}</h2>
+            <h2 class="insights__info-box__title"><a href="{{.Permalink}}">{{.Title}}</a></h2>
             <div class="insights__info-box__date">{{ dateFormat "Jan 2, 2006" .Date}}</div>
             <div class="insights__info-box__desc">{{ .Description}}</div>
             <a class="insights__info-box__read-more clearfix left" title="{{.Title}}" href="{{.Permalink}}">

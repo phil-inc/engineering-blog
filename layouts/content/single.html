@@ -1,0 +1,18 @@
+{{ define "main" }} 
+{{ if eq .Params.banner ""}}
+<div class="blog-banner banner-bg">
+    {{else}}
+    <div class="blog-banner banner-bg banner-bg__img" style="background: url({{.Params.banner}});">
+{{end}}
+    <div class="blog-banner__title-box">
+        <h1 class="container">
+            {{.Title}}
+        </h1>
+    </div>
+</div>
+<div class="container">
+    <div class="content-div blog-section">
+        {{ .Content }} 
+    </div>
+</div>
+{{ end }}
