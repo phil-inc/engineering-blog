@@ -1,10 +1,9 @@
 +++
 banner = "/uploads/banner.png"
-date = 2022-02-28T08:00:00Z
+date = "2022-02-28T08:00:00.000+00:00"
 description = "Edenbridge Pharmaceuticals, LLC (“Edenbridge”) today announced that DARTISLA ODT (glycopyrrolate) is now available by prescription in the United States through Phil, the commercialization partner and eHub for DARTISLA ODT, as well as in retail pharmacies throughout the country. To ensure access to patients in need, Edenbridge is sponsoring the DARTISLA ODT Copay Program, which allows eligible patients to obtain the product for as little as $0 when filled through Phil or $20 when filled at other pharmacies."
 spotlight = "true"
 title = "Edenbridge Pharmaceuticals Announces the Launch of DARTISLA ODT"
-type = "content"
 url = "press-releases/Edenbridge-Pharmaceuticals-Announces-the-Launch-of-DARTISLA-ODT"
 
 +++
