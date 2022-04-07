@@ -36,3 +36,5 @@ fields:
   config:
     maxSize: 64
   label: banner
+pages:
+- content/phil-announces-up-to-100m-strategic-growth-investment.md
