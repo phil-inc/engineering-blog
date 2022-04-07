@@ -3,28 +3,84 @@
 {{ partial "head.html" . }}
 
 <body>
-    <div>
-        {{ partial "header.html" . }}
-        <div class="news-press-banner">
-            <div class="container">
-                <h1 class="home-page__heading">Insights</h1>
-            </div>
+    {{ partial "header.html" . }}
+    <div class="insights-page-banner">
+        <div class="container">
+            <h1 class="home-page__heading">Insights</h1>
         </div>
-        <div class="releases">
-            <div class="container">
-                <div class="news-page__title clearfix">
-                    <div class="left">
-                        <img src="/img/icons/news.svg" alt="" />
-                    </div>
-                    <h5 class="news-page__title__heading">All Insights</h5>
-                </div>
-            </div>
-            <div class="container two-even-columns-grid all-releases">
-                {{ block "main" . }}{{ end }}
-            </div>
-        </div>
-        {{ partial "footer.html" . }}
     </div>
-</body>
+    <div class="insights">
+        <div class="container">
+            <div class="insights-page__title clearfix">
+                <div class="left">
+                    <img src="/img/icons/news.svg" alt="" />
+                </div>
+                <h5 class="insights-page__title__heading">All Insights</h5>
+            </div>
+        </div>
+        <div class="container">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </div>
 
+</div>
+    {{ partial "footer.html" . }}
+</body>
+<script>
+    $(document).ready(function(e){
+        $('.load-more').click(function(e){
+            var appendBlog = "";
+            var counter = 0;
+            var append = true;
+            var totalInsights = JSON.parse({{ jsonify .Pages }});
+            var totalVisibleBlog = $('.insights__all-list').length;
+            var appendBlogCount = 0;
+
+            totalInsights.forEach((e,i) => {
+               
+                if (i > totalVisibleBlog-1 && append == true) {
+                    console.log(i);
+                    console.log(totalVisibleBlog-1);
+                    counter++;
+
+                    if (counter == 1) {
+                        appendBlog += '<div class="insights__row">';
+                    }
+
+                    appendBlog += '<div class="insights__all-list">';
+                    if (e.Params.banner == "") {
+                        appendBlog += '<div class="insights__all-list__banner"><img class="no-banner-logo" src="/img/p-logo.png"></div>';
+                    }  else {
+                        appendBlog += '<div class="insights__all-list__banner" style="background: url('+e.Params.banner+');"></div>';
+                    }
+
+                    appendBlog += '<div class="insights__info-box">';
+                    appendBlog += '<h2 class="insights__info-box__title">'+e.Title+'</h2>';
+                    appendBlog += '<div class="insights__info-box__date">'+e.Date+'</div>';
+                    appendBlog += '<div class="insights__info-box__desc">'+e.Description+'</div>';
+                    appendBlog += '<a class="insights__info-box__read-more clearfix left" title="'+e.Title+'" href="'+e.Permalink+'"><span class="insights__info-box__read-more__text--auto">Read more</span><span class="insights__info-box__read-more__icon">→</span></a>'
+                    appendBlog += '</div></div>';
+
+                    if (counter == 3) {
+                        appendBlog += '</div>';
+                        counter = 0;
+                    }
+                    appendBlogCount++;
+
+                    if (appendBlogCount == 6) {
+                        console.log('here');
+                        append = false;
+                    }
+                    console.log('again');
+                }
+            });
+            $('.insights__all').append(appendBlog);
+            adjustHeight();
+
+            if ($('.insights__all-list').length == totalInsights.length) {
+                $('.insights__button-link').css('display','none');
+            }
+        });
+    });
+</script>
 </html>

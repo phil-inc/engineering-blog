@@ -1,116 +1,236 @@
+.insights-page-banner {
+  padding: calc(120px - 61px) 0 58px;
+  background-image: url("../../img/news-banner.png");
+  background-repeat: no-repeat;
+  background-position: 100px bottom;
+  background-size: 300px;
+
+  .home-page__heading {
+    max-width: 116px;
+
+    @include for-size(small) {
+      max-width: 100%;
+      font: normal bold 26px/1.31 "MarkOTBold", arial, sans-serif;
+    }
+
+    @include for-size(medium) {
+      font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
+      margin-bottom: 0;
+    }
+  }
+
+  @include for-size(small) {
+    background-size: contain;
+    background-position: top right;
+    padding-bottom: 134px;
+  }
+
+  @include for-size(medium) {
+    padding: calc(180px - 107px) 0 187px;
+    background-size: 615px;
+    background-position: right bottom;
+  }
+}
+
+.insights-page {
+  @include e(title) {
+    margin-bottom: 20px;
+
+    @include for-size(medium) {
+      margin-bottom: 24px;
+    }
+
+    img {
+      margin-top: 1px;
+      margin-right: 11px;
+
+      @include for-size(medium) {
+        margin-top: 8px;
+      }
+    }
+
+    @include e(heading) {
+      // font-size: 26px;
+      color: $navy-blue;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include for-size(small) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      @include for-size(medium) {
+        font-size: 26px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
 .insights {
-    @include e(all) {
-        columns: 1;
-        -webkit-columns: 1; 
-        -moz-columns: 1;
+  background-color: #f7f7f7;
+  padding: 44px 0 80px;
 
-        @include for-size(medium) {
-            columns: 3;
-            -webkit-columns: 3; 
-            -moz-columns: 3;
+  @include e(all-list) {
+    float: left;
+    width: 100%;
+    margin-bottom: 28px;
+    display: inline-block;
+
+    @include e(banner) {
+      border-radius: 4px 4px 0 0;
+      min-height: 200px;
+      position: relative;
+      background-size: auto 200px !important;
+      background-color: #00CCAE;
+      background-position: center center !important;
+    }
+  }
+
+    @include e(row) {
+      > div {
+      @include for-size(small) {
+        width: 50%;
+
+        &:nth-of-type(1) {
+          padding-right: 10px;
         }
 
-        @include e(list) {
-            margin-bottom: 28px;
-            display: inline-block;
+        &:nth-of-type(2) {
+          padding-left: 10px;
+        }
+      }
+
+      @include for-size(medium) {
+        width: 33.33%;
+
+        &:nth-of-type(1) {
+          padding-right: 10px;
         }
 
-        @include e(banner) {
-            border-radius: 4px 4px 0 0;
-            min-height: 200px;
-            position: relative;
-            background-size: auto 200px !important;
-            background-color: #00CCAE;
-            background-position: center center !important;  
+        &:nth-of-type(2) {
+          padding: 0 10px;
         }
+
+        &:nth-of-type(3) {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  @include e(info-box) {
+    border-radius: 0 0 4px 4px;
+    background-color: #fff;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+   
+    @media (max-width: 500px) {
+      height: auto !important;
     }
 
-    @include e(info-box){
-        border-radius: 0 0 4px 4px ;
-        background-color: #fff;
-        padding: 24px 20px;
+    @include e(title) {
+      color: #0000ac;
+      font: normal 400 22px/1.45 $font-family--primary-medium;
 
-        @include e(title){
-            color: #0000ac;
-            font: normal 400 22px/1.45 $font-family--primary-medium;
-
-            @include for-size(medium) {
-                font: normal 400 26px/1.54 $font-family--primary-medium;
-            }
-        }
-
-        @include e(date){
-            margin : 8px 0 12px;
-            color : #797c80;
-            font : normal 400 12px $font-family--secondary;
-
-            @include for-size(medium) {
-                margin : 8px 0 16px;
-                font : normal 400 16px $font-family--secondary;
-            }
-        }
-
-        @include e(desc){
-            color : #797C80;
-            font : normal 400 16px/24px $font-family--secondary;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-
-            @include for-size(medium) {
-                font : normal 400 18px/26px $font-family--secondary;
-            }
-        }
-
-        @include e(read-more){
-            display: block;
-            color: $primary-color;
-            margin-top: 16px;
-            font : normal 400 16px/24px $font-family--secondary;
-
-            @include for-size(medium) {
-                font : normal 400 18px/26px $font-family--secondary;
-            }
-
-            @include e(icon) {
-               
-                float: left;
-                margin-right: 8px;
-                @include m(right) {
-                  font-family : $font-family--primary;
-                  float: right;
-                  margin-left: 12px;
-                }
-              }
-            
-              @include e(text) {
-                width: calc(100% - 24px);
-                float: left;
-                @include m(full) {
-                  width: auto;
-                }
-              }
-            
-              &:hover,
-              &:focus {
-                text-decoration: none;
-            
-                .insights__info-box__read-more__text,
-                .insights__info-box__read-more__text--auto {
-                  text-decoration: underline;
-                }
-            }
-        }
+      @include for-size(medium) {
+        font: normal 400 26px/1.54 $font-family--primary-medium;
+      }
     }
+
+    @include e(date) {
+      margin: 8px 0 12px;
+      color: #797c80;
+      font: normal 400 12px $font-family--secondary;
+
+      @include for-size(medium) {
+        margin: 8px 0 16px;
+        font: normal 400 16px $font-family--secondary;
+      }
+    }
+
+    @include e(desc) {
+      color: #797C80;
+      font: normal 400 16px/24px $font-family--secondary;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      margin-bottom: 16px;
+
+      @include for-size(medium) {
+        font: normal 400 18px/26px $font-family--secondary;
+      }
+    }
+
+    @include e(read-more) {
+      margin-top: auto;
+      display: block;
+      color: $primary-color;
+      font: normal 400 16px/24px $font-family--secondary;
+
+      @include for-size(medium) {
+        font: normal 400 18px/26px $font-family--secondary;
+      }
+
+      @include e(icon) {
+        margin-right: 8px;
+        margin-left: 12px;
+        font-family: $font-family--primary;
+      }
+
+      @include e(text) {
+        width: calc(100% - 24px);
+        float: left;
+
+        @include m(full) {
+          width: auto;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        .insights__info-box__read-more__text,
+        .insights__info-box__read-more__text--auto {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @include e(button-link) {
+    margin: 20px auto 0;
+    min-width: 138px;
+    padding: 12px 32px;
+    letter-spacing: 1px;
+    background: transparent;
+    text-transform: uppercase;
+    font: normal normal 16px/1.15 $font-family--primary-medium;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    display: block;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-color: $egg-blue;
+      color: $white;
+      background-color: $primary-color;
+    }
+  }
 }
 
 .no-banner-logo {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

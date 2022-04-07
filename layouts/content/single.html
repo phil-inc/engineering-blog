@@ -1,8 +1,8 @@
 {{ define "main" }} 
 {{ if eq .Params.banner ""}}
-<div class="blog-banner banner-bg">
-    {{else}}
-    <div class="blog-banner banner-bg banner-bg__img" style="background: url({{.Params.banner}});">
+    <div class="blog-banner banner-bg">
+{{else}}
+    <div class="blog-banner banner-bg banner-bg__img" style="background: linear-gradient(to bottom, rgb(73 75 76 / 52%), rgb(34 32 33 / 52%)),url({{.Params.banner}});">
 {{end}}
     <div class="blog-banner__title-box">
         <h1 class="container">

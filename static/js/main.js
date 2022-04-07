@@ -37,16 +37,24 @@ function toggleMobileNavigation() {
   document.getElementById("pageHeader").classList.toggle("header--open");
 }
 
-$(document).ready(function(e){
-  var url = $(location).attr('href'),
-  parts = url.split("/"),
-  urlLastStr = parts[parts.length-2];
-  
-  if (urlLastStr == "press-releases") {
-    $('.news_press_link').addClass('active');
-  } else if (urlLastStr == "manufacturers"){
-    $('.manufacturer_link').addClass('active');
-  } else if (urlLastStr == "patient"){
-    $('.patient_link').addClass('active');
+function adjustHeight() {
+  var $items = $('.insights__all-list'); 
+
+  if( $items.length > 0 ) {
+      var maxHeight = 0;
+      $('.insights__info-box').each(function () {
+          var $this = $(this),
+              height = $this.outerHeight();
+          if( height > maxHeight )
+              maxHeight = height;
+      });
+      
+    //  maxHeight = maxHeight + 200; //BANNER HEIGHT
+
+      $('.insights__info-box').each(function () {
+          $(this).css('height', maxHeight + 'px');
+      });
   }
- });
+}
+
+adjustHeight();
