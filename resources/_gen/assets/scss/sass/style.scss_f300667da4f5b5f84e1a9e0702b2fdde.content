@@ -1827,7 +1827,7 @@ label {
       border-radius: 4px 4px 0 0;
       min-height: 200px;
       position: relative;
-      background-size: auto 200px !important;
+      background-size: cover !important;
       background-color: #00CCAE;
       background-position: center center !important; }
   @media (min-width: 600px) {

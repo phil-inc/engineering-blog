@@ -28,11 +28,13 @@
 </body>
 <script>
     $(document).ready(function(e){
+        var totalInsights = JSON.parse({{ jsonify .Pages }});
+        showLoadBtn();
         $('.load-more').click(function(e){
             var appendBlog = "";
             var counter = 0;
             var append = true;
-            var totalInsights = JSON.parse({{ jsonify .Pages }});
+            
             var totalVisibleBlog = $('.insights__all-list').length;
             var appendBlogCount = 0;
 
@@ -76,11 +78,15 @@
             });
             $('.insights__all').append(appendBlog);
             adjustHeight();
+            showLoadBtn();
+        });
 
+        function showLoadBtn()
+        {
             if ($('.insights__all-list').length == totalInsights.length) {
                 $('.insights__button-link').css('display','none');
             }
-        });
+        }
     });
 </script>
 </html>
