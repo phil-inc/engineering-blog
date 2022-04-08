@@ -1,8 +1,8 @@
 .insights-page-banner {
-  padding: calc(120px - 61px) 0 58px;
+  padding: calc(120px - 60px) 0 58px;
   background-image: url("../../img/news-banner.png");
   background-repeat: no-repeat;
-  background-position: 100px bottom;
+  background-position: 130px bottom;
   background-size: 300px;
 
   .home-page__heading {
@@ -17,6 +17,12 @@
       font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
       margin-bottom: 0;
     }
+  }
+
+  @include for-size(500) {
+    background-size: contain;
+    background-position: top right;
+    padding-bottom: 134px;
   }
 
   @include for-size(small) {

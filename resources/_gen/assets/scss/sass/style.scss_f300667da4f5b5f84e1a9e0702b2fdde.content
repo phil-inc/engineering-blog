@@ -1767,10 +1767,10 @@ label {
   background-repeat: no-repeat !important; }
 
 .insights-page-banner {
-  padding: calc(120px - 61px) 0 58px;
+  padding: calc(120px - 60px) 0 58px;
   background-image: url("../../img/news-banner.png");
   background-repeat: no-repeat;
-  background-position: 100px bottom;
+  background-position: 130px bottom;
   background-size: 300px; }
   .insights-page-banner .home-page__heading {
     max-width: 116px; }
@@ -1782,6 +1782,11 @@ label {
       .insights-page-banner .home-page__heading {
         font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
         margin-bottom: 0; } }
+  @media (min-width: 500px) {
+    .insights-page-banner {
+      background-size: contain;
+      background-position: top right;
+      padding-bottom: 134px; } }
   @media (min-width: 600px) {
     .insights-page-banner {
       background-size: contain;
