@@ -1,44 +1,48 @@
-.insights-page-banner {
-  padding: calc(120px - 60px) 0 58px;
+.insights-banner {
   background-image: url("../../img/news-banner.png");
   background-repeat: no-repeat;
   background-position: 130px bottom;
   background-size: 300px;
-
-  .home-page__heading {
-    max-width: 116px;
-
-    @include for-size(small) {
-      max-width: 100%;
-      font: normal bold 26px/1.31 "MarkOTBold", arial, sans-serif;
-    }
-
-    @include for-size(medium) {
-      font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
-      margin-bottom: 0;
-    }
-  }
+  min-height: 180px;
 
   @include for-size(500) {
     background-size: contain;
     background-position: top right;
-    padding-bottom: 134px;
   }
 
   @include for-size(small) {
+    min-height: 216px;
     background-size: contain;
     background-position: top right;
-    padding-bottom: 134px;
   }
 
   @include for-size(medium) {
-    padding: calc(180px - 107px) 0 187px;
+    min-height: 300px;
     background-size: 615px;
     background-position: right bottom;
   }
 }
 
 .insights-page {
+
+  @include e(heading) {
+    color: $primary-color;
+    font: normal bold 32px/180px $font-family--primary-bold;
+
+    @include for-size(small) {
+      line-height: 216px;
+    }
+
+    @include for-size(medium) {
+      font: normal bold 42px/300px $font-family--primary-bold;
+    }
+
+    @include for-size(large) {
+      font-size: 50px;
+      line-height: 300px;
+    }
+  }
+
   @include e(title) {
     margin-bottom: 20px;
 
@@ -47,8 +51,7 @@
     }
 
     img {
-      margin-top: 1px;
-      margin-right: 11px;
+      margin-right: 8px;
 
       @include for-size(medium) {
         margin-top: 8px;
@@ -78,10 +81,16 @@
   background-color: #f7f7f7;
   padding: 44px 0 80px;
 
+  @include e(all) {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
   @include e(all-list) {
     float: left;
     width: 100%;
     margin-bottom: 28px;
+    padding : 0 10px;
     display: inline-block;
 
     @include e(banner) {
@@ -92,39 +101,31 @@
       background-color: #00CCAE;
       background-position: center center !important;
     }
-  }
 
-    @include e(row) {
-      > div {
-      @include for-size(small) {
-        width: 50%;
+    @include for-size(small) {
+      width: 50%;
+    }
 
-        &:nth-of-type(1) {
-          padding-right: 10px;
-        }
-
-        &:nth-of-type(2) {
-          padding-left: 10px;
-        }
-      }
-
-      @include for-size(medium) {
-        width: 33.33%;
-
-        &:nth-of-type(1) {
-          padding-right: 10px;
-        }
-
-        &:nth-of-type(2) {
-          padding: 0 10px;
-        }
-
-        &:nth-of-type(3) {
-          padding-left: 10px;
-        }
-      }
+    @include for-size(medium) {
+      width: 33%;
     }
   }
+
+    // @include e(row) {
+    //   > div {
+    //   @include for-size(small) {
+    //     width: 50%;
+
+    //     // &:nth-of-type(1) {
+    //     //   padding-right: 10px;
+    //     // }
+
+    //     // &:nth-of-type(2) {
+    //     //   padding-left: 10px;
+    //     // }
+    //   }
+    // }
+ // }
 
   @include e(info-box) {
     border-radius: 0 0 4px 4px;
@@ -153,7 +154,7 @@
 
       @include for-size(medium) {
         margin: 8px 0 16px;
-        font: normal 400 16px $font-family--secondary;
+        font: normal 400 14px $font-family--secondary;
       }
     }
 
