@@ -2,7 +2,7 @@
 title: Edenbridge Pharmaceuticals Announces the Launch
 date: 2021-06-04T00:14:19+00:00
 type: content
-url: press-releases/Phil_Series_D-Announcement-Warburg_Pincus
+url: /Phil_Series_D-Announcement-Warburg_Pincus
 spotlight: 'true'
 description: Phil, a software therapy deployment platform, today announced a $56 million
   Series D fundraise led by Warburg Pincus, a leading global growth investor. The
