@@ -4,9 +4,9 @@
 
 <body>
     {{ partial "header.html" . }}
-    <div class="insights-page-banner">
+    <div class="insights-banner">
         <div class="container">
-            <h1 class="home-page__heading">Insights</h1>
+            <h1 class="insights-page__heading">Insights</h1>
         </div>
     </div>
     <div class="insights">
@@ -32,7 +32,6 @@
         showLoadBtn();
         $('.load-more').click(function(e){
             var appendBlog = "";
-            var counter = 0;
             var append = true;
             
             var totalVisibleBlog = $('.insights__all-list').length;
@@ -41,13 +40,6 @@
             totalInsights.forEach((e,i) => {
                
                 if (i > totalVisibleBlog-1 && append == true) {
-                    console.log(i);
-                    console.log(totalVisibleBlog-1);
-                    counter++;
-
-                    if (counter == 1) {
-                        appendBlog += '<div class="insights__row">';
-                    }
 
                     appendBlog += '<div class="insights__all-list">';
                     if (e.Params.banner == "") {
@@ -62,18 +54,11 @@
                     appendBlog += '<div class="insights__info-box__desc">'+e.Description+'</div>';
                     appendBlog += '<a class="insights__info-box__read-more clearfix left" title="'+e.Title+'" href="'+e.Permalink+'"><span class="insights__info-box__read-more__text--auto">Read more</span><span class="insights__info-box__read-more__icon">→</span></a>'
                     appendBlog += '</div></div>';
-
-                    if (counter == 3) {
-                        appendBlog += '</div>';
-                        counter = 0;
-                    }
                     appendBlogCount++;
 
                     if (appendBlogCount == 6) {
-                        console.log('here');
                         append = false;
                     }
-                    console.log('again');
                 }
             });
             $('.insights__all').append(appendBlog);
