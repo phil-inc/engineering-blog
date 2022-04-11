@@ -1766,45 +1766,46 @@ label {
   background-color: #00ccae;
   background-repeat: no-repeat !important; }
 
-.insights-page-banner {
-  padding: calc(120px - 60px) 0 58px;
+.insights-banner {
   background-image: url("../../img/news-banner.png");
   background-repeat: no-repeat;
   background-position: 130px bottom;
-  background-size: 300px; }
-  .insights-page-banner .home-page__heading {
-    max-width: 116px; }
-    @media (min-width: 600px) {
-      .insights-page-banner .home-page__heading {
-        max-width: 100%;
-        font: normal bold 26px/1.31 "MarkOTBold", arial, sans-serif; } }
-    @media (min-width: 800px) {
-      .insights-page-banner .home-page__heading {
-        font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
-        margin-bottom: 0; } }
+  background-size: 300px;
+  min-height: 180px; }
   @media (min-width: 500px) {
-    .insights-page-banner {
+    .insights-banner {
       background-size: contain;
-      background-position: top right;
-      padding-bottom: 134px; } }
+      background-position: top right; } }
   @media (min-width: 600px) {
-    .insights-page-banner {
+    .insights-banner {
+      min-height: 216px;
       background-size: contain;
-      background-position: top right;
-      padding-bottom: 134px; } }
+      background-position: top right; } }
   @media (min-width: 800px) {
-    .insights-page-banner {
-      padding: calc(180px - 107px) 0 187px;
+    .insights-banner {
+      min-height: 300px;
       background-size: 615px;
       background-position: right bottom; } }
+.insights-page__heading {
+  color: #00ccae;
+  font: normal bold 32px/180px "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .insights-page__heading {
+      line-height: 216px; } }
+  @media (min-width: 800px) {
+    .insights-page__heading {
+      font: normal bold 42px / 300px "MarkOTBold", arial, sans-serif; } }
+  @media (min-width: 992px) {
+    .insights-page__heading {
+      font-size: 50px;
+      line-height: 300px; } }
 .insights-page__title {
   margin-bottom: 20px; }
   @media (min-width: 800px) {
     .insights-page__title {
       margin-bottom: 24px; } }
   .insights-page__title img {
-    margin-top: 1px;
-    margin-right: 11px; }
+    margin-right: 8px; }
     @media (min-width: 800px) {
       .insights-page__title img {
         margin-top: 8px; } }
@@ -1823,10 +1824,14 @@ label {
 .insights {
   background-color: #f7f7f7;
   padding: 44px 0 80px; }
+  .insights__all {
+    margin-left: -10px;
+    margin-right: -10px; }
   .insights__all-list {
     float: left;
     width: 100%;
     margin-bottom: 28px;
+    padding: 0 10px;
     display: inline-block; }
     .insights__all-list__banner {
       border-radius: 4px 4px 0 0;
@@ -1835,22 +1840,12 @@ label {
       background-size: cover !important;
       background-color: #00CCAE;
       background-position: center center !important; }
-  @media (min-width: 600px) {
-    .insights__row > div {
-      width: 50%; }
-      .insights__row > div:nth-of-type(1) {
-        padding-right: 10px; }
-      .insights__row > div:nth-of-type(2) {
-        padding-left: 10px; } }
-  @media (min-width: 800px) {
-    .insights__row > div {
-      width: 33.33%; }
-      .insights__row > div:nth-of-type(1) {
-        padding-right: 10px; }
-      .insights__row > div:nth-of-type(2) {
-        padding: 0 10px; }
-      .insights__row > div:nth-of-type(3) {
-        padding-left: 10px; } }
+    @media (min-width: 600px) {
+      .insights__all-list {
+        width: 50%; } }
+    @media (min-width: 800px) {
+      .insights__all-list {
+        width: 33%; } }
   .insights__info-box {
     border-radius: 0 0 4px 4px;
     background-color: #fff;
@@ -1873,7 +1868,7 @@ label {
       @media (min-width: 800px) {
         .insights__info-box__date {
           margin: 8px 0 16px;
-          font: normal 400 16px "Lato", arial, sans-serif; } }
+          font: normal 400 14px "Lato", arial, sans-serif; } }
     .insights__info-box__desc {
       color: #797C80;
       font: normal 400 16px/24px "Lato", arial, sans-serif;

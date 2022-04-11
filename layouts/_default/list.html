@@ -1,34 +1,24 @@
 {{ define "main" }}
 <div class="insights__all">
-    {{ $.Scratch.Set "counter" 0 }}
     {{ range first 6 .Pages }}
-        {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
-        {{$counter := $.Scratch.Get "counter"}}
-        {{if eq $counter 1}}
-            <div class="insights__row">        
-        {{end}}
-            <div class="insights__all-list">
-                {{ if eq .Params.banner ""}}
-                <div class="insights__all-list__banner">
-                    <img class="no-banner-logo" src="/img/p-logo.png">
-                </div>  
-                {{else}}
-                <div class="insights__all-list__banner" style="background: url({{.Params.banner}});"></div>  
-                {{end}}
-                <div class="insights__info-box">
-                    <h2 class="insights__info-box__title">{{.Title}}</h2>
-                    <div class="insights__info-box__date">{{ dateFormat "Jan 2, 2006" .Date}}</div>
-                    <div class="insights__info-box__desc">{{ .Description}}</div>
-                    <a class="insights__info-box__read-more clearfix left" title="{{.Title}}" href="{{.Permalink}}">
-                        <span class="insights__info-box__read-more__text--auto">Read more</span>
-                        <span class="insights__info-box__read-more__icon">→</span>
-                    </a>
-                </div>
+        <div class="insights__all-list">
+            {{ if eq .Params.banner ""}}
+            <div class="insights__all-list__banner">
+                <img class="no-banner-logo" src="/img/p-logo.png">
+            </div>  
+            {{else}}
+            <div class="insights__all-list__banner" style="background: url({{.Params.banner}});"></div>  
+            {{end}}
+            <div class="insights__info-box">
+                <h2 class="insights__info-box__title">{{.Title}}</h2>
+                <div class="insights__info-box__date">{{ dateFormat "Jan 2, 2006" .Date}}</div>
+                <div class="insights__info-box__desc">{{ .Description}}</div>
+                <a class="insights__info-box__read-more clearfix left" title="{{.Title}}" href="{{.Permalink}}">
+                    <span class="insights__info-box__read-more__text--auto">Read more</span>
+                    <span class="insights__info-box__read-more__icon">→</span>
+                </a>
             </div>
-        {{if eq $counter 3}}
-            </div>
-            {{ $.Scratch.Set "counter" 0 }}
-        {{end}}
+        </div>
     {{ end }}
 </div>
 <button class="insights__button-link load-more">
